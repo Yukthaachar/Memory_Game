@@ -1,0 +1,440 @@
+.gameContainer {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  font-size: 18px;
+  opacity: 0.9;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Game Stats */
+.gameStats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 16px 24px;
+  text-align: center;
+  color: white;
+  min-width: 100px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.statLabel {
+  display: block;
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.statValue {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Game Board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Game Controls */
+.gameControls {
+  display: flex;
+  justify-content: center;
+}
+
+.newGameBtn {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(238, 90, 36, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.newGameBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(238, 90, 36, 0.6);
+}
+
+.newGameBtn:active {
+  transform: translateY(0);
+}
+
+/* Congratulations Modal */
+.congratulations {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  animation: celebrationPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.trophy {
+  font-size: 80px;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+.congTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: #2d3748;
+  margin: 0 0 16px 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.congMessage {
+  font-size: 18px;
+  color: #4a5568;
+  margin: 0 0 30px 0;
+  line-height: 1.6;
+}
+
+.highlight {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 20px;
+}
+
+.playAgainBtn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.playAgainBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.6);
+}
+
+.playAgainBtn:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes celebrationPop {
+  0% {
+    transform: scale(0.8) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gameContainer {
+    padding: 15px;
+  }
+  
+  .title {
+    font-size: 36px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+  
+  .board {
+    padding: 20px;
+    gap: 12px;
+  }
+  
+  .gameStats {
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .statCard {
+    padding: 12px 20px;
+    min-width: 80px;
+  }
+  
+  .statValue {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .board {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 15px;
+    gap: 8px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  .congratulations {
+    padding: 30px 20px;
+    margin: 0 10px;
+  }
+  
+  .trophy {
+    font-size: 60px;
+  }
+  
+  .congTitle {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gameStats {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .statCard {
+    width: 120px;
+  }
+}
+
+/* Add these styles to your existing Board.module.css */
+
+/* Symbol-specific styles for cards */
+.cardSymbol {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  user-select: none;
+}
+
+.cardBackContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardBackContent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  border-radius: inherit;
+}
+
+.questionMark {
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  position: relative;
+}
+
+/* Responsive adjustments for symbols */
+@media (max-width: 768px) {
+  .cardSymbol {
+    font-size: 2rem;
+  }
+  
+  .questionMark {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardSymbol {
+    font-size: 1.5rem;
+  }
+  
+  .questionMark {
+    font-size: 1.2rem;
+  }
+}
+
+/* Add these card flip styles to the bottom of your Board.module.css */
+
+/* Card Styles */
+.card {
+  width: 80px;
+  height: 80px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.cardInner.flipped {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardFront {
+  background: white;
+  transform: rotateY(180deg);
+  border: 2px solid #e2e8f0;
+}
+
+.cardBack {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Responsive card sizes */
+@media (max-width: 768px) {
+  .card {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.bestScoreDisplay {
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+.bestScoreLabel {
+  color: #666;
+}
+
+.bestScoreValue {
+  font-weight: bold;
+  color: #ff6b6b;
+}
+
+.newRecordMessage {
+  color: #4ecdc4;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.scoreDifference {
+  margin-top: 10px;
+  color: #666;
+}
+
+.improvement {
+  color: #ff9f43;
+}
+
+.errorMessage {
+  color: #ff6b6b;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.loadingIndicator {
+  text-align: center;
+  color: #666;
+  margin-top: 20px;
+}
