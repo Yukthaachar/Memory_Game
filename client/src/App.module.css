@@ -90,6 +90,11 @@ body {
     margin-bottom: 1rem;
     line-height: 1.2;
   }
+  .navButton {
+    background-color: white !important;
+    color: black !important;           
+    box-shadow: none !important;        
+  }
 }
 
 /* Add to your App.module.css */
