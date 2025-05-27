@@ -265,17 +265,18 @@
 
 @media (max-width: 480px) {
   .gameStats {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
   }
-  
+
   .statCard {
-    width: 120px;
+    width: 100px;
+    text-align: center;
   }
 }
 
-/* Add these styles to your existing Board.module.css */
 
 /* Symbol-specific styles for cards */
 .cardSymbol {

@@ -8,14 +8,8 @@ function App() {
   const [view, setView] = useState('login'); 
 
   useEffect(() => {
-
-    const token = localStorage.getItem('token');
-    const storedUser = localStorage.getItem('user'); 
-
-    if (token && storedUser) {
-      setUser(JSON.parse(storedUser));
-      setView('board'); 
-    }
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
   }, []);
 
   const handleLogin = (userData, token) => {
